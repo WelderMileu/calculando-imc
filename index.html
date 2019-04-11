@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html leng="pt-br">
+<head>
+	<meta name="acthor" content="Welder Mileu">
+	<meta charset="utf-8">
+	<title>IMC</title>
+	<script type="text/javascript" src="../node_modules/sweetalert/dist/sweetalert.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+	<body class="bg-dark"><br>
+		<section class="container">
+			<h1 class="jumbotron container text-center">CALCULO - IMC</h1>	
+			<input id="num1" type="text" name="" placeholder="Peso" class="form-control col-lg-3"><br>
+			<input id="num2" type="text" name="" placeholder="Altura" class="form-control col-lg-3"><br>
+			<input type="button" name="" value="Calcular" onclick="calc();" class="btn btn-outline-success"><br><br>
+			<p id="res" style="color:#fff;">Resultado</p>	
+		</section>
+		<script type="text/javascript">
+			function calc(){
+				var p1 = document.getElementById('num1').value;
+				var p2 = document.getElementById('num2').value;
+				var soma = (parseInt(p1)*parseInt(p2))/parseInt(p2);
+				document.getElementById("res").innerHTML=soma.toFixed(2);
+				if(p1 == "" && p2 ==""){
+					swal({title:"Erro",
+						text:"Favor preencher os campos vazios",
+						icon:"warning"
+					});
+				}else{
+					swal({title:'Calculo',
+						text:'Calculo Efetudo com sucesso!',
+						icon:'success'});
+				}
+			}
+		</script>
+	</body>
+</html>
